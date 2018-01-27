@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "r_route",uniqueConstraints=@UniqueConstraint(columnNames={"dms_id","recipient_id","service","application","recipient_spe_id","x_route_1","x_route_2","x_route_3","x_route_4","x_route_5"}))
 public class Route {
 
     @Id

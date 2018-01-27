@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "R_PARTY")
+@Table(name = "r_party",uniqueConstraints=@UniqueConstraint(columnNames={"uid"}))
 public class Party {
 
     @Id

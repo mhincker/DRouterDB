@@ -16,14 +16,14 @@ public class DrouterApplication {
 
     public static void main(String[] args) {
 		SpringApplication.run(DrouterApplication.class, args);
-	}/*
+	}
 	@Bean
 	public CommandLineRunner demo (PartyRepository repository){
 		return (args) -> {
-			// save a couple of Clients
-			repository.save(new Party("d0001", "d0003", "d0002", "Dealer Name","",""));
-			repository.save(new Party("d0002", "d0003", "d0003", "Dealer Name","",""));
-			repository.save(new Party("d0003", "d0003", "", "Dealer Name","",""));
+
+			repository.save(new Party("d0001", null, null, "Dealer Name","",""));
+			repository.save(new Party("d0002", null, null, "Dealer Name","",""));
+			repository.save(new Party("d0003", null, null, "Dealer Name","",""));
 
 			// fetch all Clients
 			log.info("Dealers found with findAll():");
@@ -43,11 +43,8 @@ public class DrouterApplication {
 			// fetch Clients by last name
 			log.info("Party found with findByLastName('Dealer3'):");
 			log.info("--------------------------------------------");
-			for (Party party3 : repository.findByUid("d0003")) {
-				log.info(party3.toString());
-			}
 			log.info("");
 		};
-	}*/
+	}
 
 }
