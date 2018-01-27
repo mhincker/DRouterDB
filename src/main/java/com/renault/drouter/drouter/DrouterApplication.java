@@ -1,7 +1,7 @@
 package com.renault.drouter.drouter;
 
-import com.renault.drouter.drouter.model.Dealer;
-import com.renault.drouter.drouter.repository.DealerRepository;
+import com.renault.drouter.drouter.model.Party;
+import com.renault.drouter.drouter.repository.PartyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,40 +16,38 @@ public class DrouterApplication {
 
     public static void main(String[] args) {
 		SpringApplication.run(DrouterApplication.class, args);
-	}
+	}/*
 	@Bean
-	public CommandLineRunner demo (DealerRepository repository){
+	public CommandLineRunner demo (PartyRepository repository){
 		return (args) -> {
 			// save a couple of Clients
-			repository.save(new Dealer("d0001", "Dealer1"));
-			repository.save(new Dealer("d0002", "Dealer2"));
-			repository.save(new Dealer("d0003", "Dealer3"));
-			repository.save(new Dealer("d0004", "Dealer4"));
-			repository.save(new Dealer("d0005", "Dealer5"));
+			repository.save(new Party("d0001", "d0003", "d0002", "Dealer Name","",""));
+			repository.save(new Party("d0002", "d0003", "d0003", "Dealer Name","",""));
+			repository.save(new Party("d0003", "d0003", "", "Dealer Name","",""));
 
 			// fetch all Clients
 			log.info("Dealers found with findAll():");
 			log.info("-------------------------------");
-			for (Dealer Dealer : repository.findAll()) {
-				log.info(Dealer.toString());
+			for (Party Party : repository.findAll()) {
+				log.info(Party.toString());
 			}
 			log.info("");
 
-			// fetch an individual Dealer by ID
-			Dealer Dealer = repository.findOne(1L);
-			log.info("Dealer found with findOne(1L):");
+			// fetch an individual Party by ID
+			Party Party = repository.findOne(1L);
+			log.info("Party found with findOne(1L):");
 			log.info("--------------------------------");
-			log.info(Dealer.toString());
+			log.info(Party.toString());
 			log.info("");
 
 			// fetch Clients by last name
-			log.info("Dealer found with findByLastName('Dealer3'):");
+			log.info("Party found with findByLastName('Dealer3'):");
 			log.info("--------------------------------------------");
-			for (Dealer dealer3 : repository.findByUid("d0003")) {
-				log.info(dealer3.toString());
+			for (Party party3 : repository.findByUid("d0003")) {
+				log.info(party3.toString());
 			}
 			log.info("");
 		};
-	}
+	}*/
 
 }
