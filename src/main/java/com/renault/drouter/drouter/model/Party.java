@@ -46,6 +46,86 @@ public class Party {
 
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public Party getDms() {
+        return dms;
+    }
+
+    public void setDms(Party dms) {
+        this.dms = dms;
+    }
+
+    public Party getParent() {
+        return parent;
+    }
+
+    public void setParent(Party parent) {
+        this.parent = parent;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Set<Route> getRoutedByDms() {
+        return routedByDms;
+    }
+
+    public void setRoutedByDms(Set<Route> routedByDms) {
+        this.routedByDms = routedByDms;
+    }
+
+    public Set<Route> getRoutedByRecipient() {
+        return routedByRecipient;
+    }
+
+    public void setRoutedByRecipient(Set<Route> routedByRecipient) {
+        this.routedByRecipient = routedByRecipient;
+    }
+
+    public Set<Route> getRoutedByRecipientSpe() {
+        return routedByRecipientSpe;
+    }
+
+    public void setRoutedByRecipientSpe(Set<Route> routedByRecipientSpe) {
+        this.routedByRecipientSpe = routedByRecipientSpe;
+    }
+
+    public Set<Party> getParentParty() {
+        return parentParty;
+    }
+
+    public void setParentParty(Set<Party> parentParty) {
+        this.parentParty = parentParty;
+    }
+
     @Override
     public String toString() {
         return String.format(

@@ -10,7 +10,7 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "lov", path = "lov")
 public interface ListOfValueRepository extends CrudRepository<ListOfValue, Long> {
 
-    //List<Party> findByUid(String uId);
+    List<ListOfValue> findByKey(String key);
 
 }
 
