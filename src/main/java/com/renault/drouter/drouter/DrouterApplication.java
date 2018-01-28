@@ -1,7 +1,9 @@
 package com.renault.drouter.drouter;
 
 import com.renault.drouter.drouter.model.Party;
+import com.renault.drouter.drouter.model.Route;
 import com.renault.drouter.drouter.repository.PartyRepository;
+import com.renault.drouter.drouter.repository.RouteRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,32 +20,39 @@ public class DrouterApplication {
 		SpringApplication.run(DrouterApplication.class, args);
 	}
 	@Bean
-	public CommandLineRunner demo (PartyRepository repository){
+	public CommandLineRunner demo (PartyRepository partyRepository, RouteRepository routeRepository){
 		return (args) -> {
 
-			repository.save(new Party("d0001", null, null, "Dealer Name","",""));
-			repository.save(new Party("d0002", null, null, "Dealer Name","",""));
-			repository.save(new Party("d0003", null, null, "Dealer Name","",""));
+            partyRepository.save(new Party("d0001", null, null, "Dealer Name","",""));
+            partyRepository.save(new Party("d0002", null, null, "Dealer Name","",""));
+            partyRepository.save(new Party("d0003", null, null, "Dealer Name","",""));
+            Party dms = partyRepository.findByUid("d0001");
+            Party recipient = partyRepository.findByUid("d0002");
+            Party recipientSpe = partyRepository.findByUid("d0003");
 
+            routeRepository.save(new Route(dms,recipient,"SBOL","Calendar",recipientSpe));
 			// fetch all Clients
 			log.info("Dealers found with findAll():");
 			log.info("-------------------------------");
-			for (Party Party : repository.findAll()) {
+			for (Party Party : partyRepository.findAll()) {
 				log.info(Party.toString());
 			}
 			log.info("");
 
 			// fetch an individual Party by ID
-			Party Party = repository.findOne(1L);
+			Party party = partyRepository.findOne(1L);
+            Route route = routeRepository.findOne(1L);
 			log.info("Party found with findOne(1L):");
 			log.info("--------------------------------");
-			log.info(Party.toString());
+			log.info(party.toString());
+            log.info(route.toString());
 			log.info("");
 
 			// fetch Clients by last name
-			log.info("Party found with findByLastName('Dealer3'):");
+			party = partyRepository.findByUid("d0003");
+			log.info("Party found with findByUid('d0003'):");
 			log.info("--------------------------------------------");
-			log.info("");
+			log.info(party.toString());
 		};
 	}
 

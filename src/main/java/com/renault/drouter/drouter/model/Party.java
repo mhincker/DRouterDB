@@ -11,7 +11,7 @@ public class Party {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     @Column(name="uid", nullable = false, length = 20)
-    private String uId;
+    private String uid;
     @ManyToOne
     @JoinColumn(name = "dms_id")
     private Party dms;
@@ -36,8 +36,8 @@ public class Party {
     public Party() {}
 
 
-    public Party(String uId, Party dms, Party parent, String name, String type, String role) {
-        this.uId = uId;
+    public Party(String uid, Party dms, Party parent, String name, String type, String role) {
+        this.uid = uid;
         this.dms = dms;
         this.parent = parent;
         this.name = name;
@@ -49,8 +49,8 @@ public class Party {
     @Override
     public String toString() {
         return String.format(
-                "Party[id=%d, uId='%s', dms='%s', parent='%s', name='%s', type='%s', role='%s']",
-                id, uId, dms, parent, name, type, role);
+                "Party[id=%d, uid='%s', dms='%s', parent='%s', name='%s', type='%s', role='%s']",
+                id, uid, dms, parent, name, type, role);
     }
 
 }

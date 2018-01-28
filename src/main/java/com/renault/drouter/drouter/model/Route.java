@@ -37,18 +37,12 @@ public class Route {
     public Route() {
     }
 
-    public Route(Party dms, Party recipient, String service, String application, Party recipientSpe, String xRoute1, String xRoute2, String xRoute3, String xRoute4, String xRoute5) {
+    public Route(Party dms, Party recipient, String service, String application, Party recipientSpe) {
         this.dms = dms;
         this.recipient = recipient;
         this.service = service;
         this.application = application;
         this.recipientSpe = recipientSpe;
-        this.xRoute1 = xRoute1;
-        this.xRoute2 = xRoute2;
-        this.xRoute3 = xRoute3;
-        this.xRoute4 = xRoute4;
-        this.xRoute5 = xRoute5;
-
 
     }
 

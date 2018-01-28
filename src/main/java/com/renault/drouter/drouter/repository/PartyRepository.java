@@ -9,6 +9,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "party", path = "party")
 public interface PartyRepository extends CrudRepository<Party, Long> {
 
-    //List<Party> findByUid(String uId);
+    Party findByUid(String uId);
 
 }
